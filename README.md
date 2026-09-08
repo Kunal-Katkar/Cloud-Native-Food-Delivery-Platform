@@ -289,3 +289,41 @@ flowchart TB
 | Maps | Google Maps / Mapbox |
 | Payments | Razorpay / Stripe |
 | Traceability | Hyperledger / Ethereum (optional, future) |
+
+---
+
+## 9. Project Schedule (20 Weeks)
+
+Total duration: **20 weeks**. Weeks **1–4** are planned in detail below. Weeks **5–20** list remaining work to complete Farmer, User (Buyer), Storage, Transport, Payment, and Traceability.
+
+### Weeks 1–4 — Detailed Weekly Plan
+
+| Week | Focus | Tasks | Deliverable |
+|------|--------|--------|-------------|
+| **Week 1** | Foundation | Repo setup (web + API skeleton), env/config, DB schema draft (users, roles), landing page polish, `ARCHITECTURE.md` as source of truth | Runnable UI + empty API; documented roles (Farmer vs User) |
+| **Week 2** | Auth and RBAC | Register/login with role select (Farmer / User), OTP stub, JWT + route guards, Farmer dashboard vs Buyer dashboard shells | Role-based login working; wrong-role routes blocked |
+| **Week 3** | Farmer + User core (v1) | Farmer: produce listing (crop, qty, cert, harvest date). Buyer: browse/filter produce by location, quality, quantity. Shared user profile | Create listing as Farmer; search listings as Buyer |
+| **Week 4** | Orders + wiring | Buyer places bulk order; Farmer sees incoming orders; order status (pending / accepted / rejected); notification placeholders | End-to-end listing → order (no storage/transport/pay yet) |
+
+**Week 1–4 exit criteria:** two roles can log in, a farmer can list produce, a buyer can order it, and the rest of the chain (storage, GPS transport, payments, QR) is clearly deferred to week 5+.
+
+### Weeks 5–20 — Remaining Work
+
+| Weeks | Module / theme | Remaining work |
+|-------|----------------|----------------|
+| **5–6** | Farmer module (complete) | Price discovery / market trends, listing edit/delete, quality certs upload, harvest calendar |
+| **7–8** | Storage module | Nearby cold storage/warehouse capacity, real-time availability, book/reserve slots, booking status on farmer dashboard |
+| **9–12** | Transport module (GPS) | Maps (Google/Mapbox), proximity search (10–50 km), vehicle filters (reefer, tonnage), book request, driver ratings, dynamic fare, AI vehicle assignment, WebSocket live status (En Route → At Farm → Delivered), buyer live track |
+| **13–15** | Payment module | Razorpay/Stripe checkout, invoice with cost breakdown, escrow/split settlement (farmer + transporter + storage), payout views for both roles |
+| **16–17** | Notifications and ops | Push/in-app alerts (order, booking, payment, vehicle status), admin/ops basics, ratings after delivery |
+| **18** | Traceability (future slice) | QR at pickup, chain history (farm → storage → truck → buyer); optional blockchain stub (not required for MVP) |
+| **19** | Hardening | Integration testing of full flow, bug fixes, security (auth scopes), performance of map/tracking |
+| **20** | Close-out | Demo script, docs (README + setup), remaining UI polish, buffer for slippage from weeks 5–19 |
+
+### 20-Week Snapshot
+
+| Phase | Weeks | Outcome |
+|-------|--------|---------|
+| Setup + auth + listing/order | 1–4 | MVP identity and marketplace loop |
+| Storage + transport + payments | 5–15 | Farm-to-buyer logistics and money |
+| Trace + polish + demo | 16–20 | Visibility, stability, presentation |
