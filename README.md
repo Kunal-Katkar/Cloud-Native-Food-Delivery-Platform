@@ -1,6 +1,3 @@
-# Question 1: Modified README — AgriLogiX System Architecture (4 Roles)
-
-```markdown
 # AgriLogiX — System Architecture
 
 > Based on [About_project.md](./About_project.md)
@@ -489,7 +486,6 @@ Total duration: **20 weeks**. Weeks **1–4** are planned in detail below. Weeks
 | Farmer + Customer + Supplier | 3–8 | Marketplace + storage loop |
 | Transporter + Payments | 9–15 | Logistics + money |
 | Trace + polish + demo | 16–20 | Visibility, stability, presentation |
-```
 
 ---
 
